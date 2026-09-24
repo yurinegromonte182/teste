@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Yuri Negromonte | Geoprocessamento</title>
+
+    <meta name="description"
+          content="Portfólio e currículo de Yuri Negromonte Nascimento Rocha, estudante de Geoprocessamento no IFPB.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --verde: #16a34a;
+            --verde-escuro: #14532d;
+            --verde-claro: #dcfce7;
+            --azul: #0f172a;
+            --cinza: #64748b;
+            --fundo: #f8fafc;
+            --branco: #ffffff;
+            --borda: #e2e8f0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--fundo);
+            color: var(--azul);
+            line-height: 1.6;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255,255,255,0.94);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--borda);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1150px;
+            margin: auto;
+            padding: 18px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 21px;
+            font-weight: bold;
+            color: var(--verde-escuro);
+        }
+
+        .logo span {
+            color: var(--verde);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #334155;
+            font-size: 14px;
+            font-weight: 600;
+            transition: .3s;
+        }
+
+        nav a:hover {
+            color: var(--verde);
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background:
+                linear-gradient(135deg, rgba(20,83,45,.96), rgba(15,118,110,.92)),
+                radial-gradient(circle at top right, #22c55e, transparent 40%);
+            color: white;
+            padding: 100px 25px 60px;
+        }
+
+        .hero-container {
+            max-width: 1150px;
+            width: 100%;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1.4fr .8fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .tag {
+            display: inline-block;
+            background: rgba(255,255,255,.12);
+            border: 1px solid rgba(255,255,255,.25);
+            padding: 8px 15px;
+            border-radius: 30px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .hero h1 {
+            font-size: clamp(40px, 6vw, 70px);
+            line-height: 1.05;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #86efac;
+        }
+
+        .hero p {
+            max-width: 650px;
+            font-size: 19px;
+            color: #dcfce7;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 13px 22px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: .3s;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--verde-escuro);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            border: 1px solid rgba(255,255,255,.5);
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: rgba(255,255,255,.1);
+        }
+
+        /* FOTO / PERFIL */
+
+        .profile {
+            display: flex;
+            justify-content: center;
+        }
+
+        .profile-card {
+            width: 290px;
+            height: 350px;
+            background: rgba(255,255,255,.1);
+            border: 1px solid rgba(255,255,255,.2);
+            border-radius: 25px;
+            padding: 25px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .profile-photo {
+            width: 170px;
+            height: 170px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            background: #bbf7d0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--verde-escuro);
+            font-size: 55px;
+            font-weight: bold;
+            border: 5px solid rgba(255,255,255,.5);
+        }
+
+        .profile-card h3 {
+            font-size: 20px;
+        }
+
+        .profile-card p {
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        /* SEÇÕES */
+
+        section {
+            padding: 90px 25px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title span {
+            color: var(--verde);
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            margin-top: 8px;
+        }
+
+        /* SOBRE */
+
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text p {
+            color: var(--cinza);
+            margin-bottom: 15px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .info {
+            background: white;
+            border: 1px solid var(--borda);
+            padding: 20px;
+            border-radius: 12px;
+        }
+
+        .info strong {
+            display: block;
+            color: var(--verde-escuro);
+            margin-bottom: 5px;
+        }
+
+        .info span {
+            font-size: 14px;
+            color: var(--cinza);
+        }
+
+        /* FORMAÇÃO */
+
+        .timeline {
+            border-left: 3px solid #bbf7d0;
+            padding-left: 30px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .timeline-item {
+            position: relative;
+            background: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border: 1px solid var(--borda);
+            border-radius: 12px;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            width: 13px;
+            height: 13px;
+            background: var(--verde);
+            border-radius: 50%;
+            left: -39px;
+            top: 30px;
+            border: 4px solid var(--verde-claro);
+        }
+
+        .timeline-item h3 {
+            margin-bottom: 5px;
+        }
+
+        .timeline-item .date {
+            color: var(--verde);
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .timeline-item p {
+            color: var(--cinza);
+        }
+
+        /* HABILIDADES */
+
+        .skills {
+            background: #ecfdf5;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid var(--borda);
+            transition: .3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: #86efac;
+        }
+
+        .skill-icon {
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .skill-card h3 {
+            margin-bottom: 8px;
+        }
+
+        .skill-card p {
+            color: var(--cinza);
+            font-size: 14px;
+        }
+
+        /* PROJETOS */
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .project {
+            background: white;
+            border: 1px solid var(--borda);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: .3s;
+        }
+
+        .project:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,.07);
+        }
+
+        .project-image {
+            height: 170px;
+            background:
+                linear-gradient(135deg, #14532d, #16a34a);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 55px;
+        }
+
+        .project-content {
+            padding: 22px;
+        }
+
+        .project-content h3 {
+            margin-bottom: 8px;
+        }
+
+        .project-content p {
+            color: var(--cinza);
+            font-size: 14px;
+        }
+
+        .project-tag {
+            display: inline-block;
+            margin-top: 15px;
+            background: var(--verde-claro);
+            color: var(--verde-escuro);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        /* CONTATO */
+
+        .contact {
+            background: var(--azul);
+            color: white;
+        }
+
+        .contact-box {
+            text-align: center;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .contact-box p {
+            color: #94a3b8;
+            margin: 15px 0 30px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            background: #1e293b;
+            padding: 12px 20px;
+            border-radius: 8px;
+            color: white;
+            text-decoration: none;
+            transition: .3s;
+        }
+
+        .contact-link:hover {
+            background: var(--verde);
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #020617;
+            color: #64748b;
+            text-align: center;
+            padding: 25px;
+            font-size: 13px;
+        }
+
+        /* RESPONSIVO */
+
+        @media (max-width: 800px) {
+
+            nav ul {
+                display: none;
+            }
+
+            .hero-container,
+            .about {
+                grid-template-columns: 1fr;
+            }
+
+            .profile {
+                order: -1;
+            }
+
+            .skills-grid,
+            .projects {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                text-align: center;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+
+            .hero p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav>
+    <div class="nav-container">
+
+        <div class="logo">
+            Yuri<span>.</span>
+        </div>
+
+        <ul>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#formacao">Formação</a></li>
+            <li><a href="#habilidades">Habilidades</a></li>
+            <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+
+    </div>
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<header class="hero">
+
+    <div class="hero-container">
+
+        <div>
+
+            <div class="tag">
+                🌎 Estudante de Geoprocessamento
+            </div>
+
+            <h1>
+                Yuri Negromonte<br>
+                <span>Nascimento Rocha</span>
+            </h1>
+
+            <p>
+                Estudante de Geoprocessamento no IFPB, interessado em
+                geotecnologias, cartografia, análise espacial e desenvolvimento
+                de soluções utilizando dados geográficos.
+            </p>
+
+            <div class="buttons">
+
+                <a href="#projetos" class="btn btn-primary">
+                    Ver projetos
+                </a>
+
+                <a href="#contato" class="btn btn-outline">
+                    Entre em contato
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="profile">
+
+            <div class="profile-card">
+
+                <!-- Depois substitua pelas suas fotos -->
+
+                <div class="profile-photo">
+                    YN
+                </div>
+
+                <h3>Yuri Negromonte</h3>
+
+                <p>
+                    Geoprocessamento · GIS · Cartografia
+                </p>
+
+                <p style="margin-top:15px;">
+                    📍 João Pessoa - PB
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ================= SOBRE ================= -->
+
+<section id="sobre">
+
+    <div class="container">
+
+        <div class="section-title">
+            <span>Perfil</span>
+            <h2>Sobre mim</h2>
+        </div>
+
+        <div class="about">
+
+            <div class="about-text">
+
+                <p>
+                    Meu nome é <strong>Yuri Negromonte Nascimento Rocha</strong>
+                    e sou estudante do curso de
+                    <strong>Geoprocessamento no IFPB</strong>.
+                </p>
+
+                <p>
+                    Tenho interesse em tecnologias relacionadas à representação,
+                    análise e interpretação do espaço geográfico.
+                </p>
+
+                <p>
+                    Durante minha formação, venho desenvolvendo conhecimentos
+                    em Sistemas de Informação Geográfica (SIG), cartografia,
+                    sensoriamento remoto, banco de dados espaciais e análise
+                    de informações geográficas.
+                </p>
+
+                <p>
+                    <strong>[EDITAR:</strong> acrescente aqui seu objetivo
+                    profissional e uma descrição mais pessoal.<strong>]</strong>
+                </p>
+
+            </div>
+
+
+            <div class="info-grid">
+
+                <div class="info">
+                    <strong>🎓 Formação</strong>
+                    <span>Geoprocessamento — IFPB</span>
+                </div>
+
+                <div class="info">
+                    <strong>📍 Localização</strong>
+                    <span>João Pessoa - PB</span>
+                </div>
+
+                <div class="info">
+                    <strong>💻 Área</strong>
+                    <span>Geotecnologias e SIG</span>
+                </div>
+
+                <div class="info">
+                    <strong>🌎 Interesse</strong>
+                    <span>Análise espacial</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FORMAÇÃO ================= -->
+
+<section id="formacao">
+
+    <div class="container">
+
+        <div class="section-title">
+            <span>Trajetória</span>
+            <h2>Formação acadêmica</h2>
+        </div>
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+
+                <div class="date">
+                    2023 — Atualmente
+                </div>
+
+                <h3>
+                    Tecnologia em Geoprocessamento
+                </h3>
+
+                <p>
+                    Instituto Federal de Educação, Ciência e Tecnologia
+                    da Paraíba — IFPB.
+                </p>
+
+                <p style="margin-top:10px;">
+                    <strong>[EDITAR:</strong> período atual, previsão de conclusão,
+                    disciplinas ou projetos relevantes.<strong>]</strong>
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="date">
+                    [ANO] — [ANO]
+                </div>
+
+                <h3>
+                    Curso complementar — [Nome do curso]
+                </h3>
+
+                <p>
+                    <strong>[INFORMAÇÃO FICTÍCIA]</strong> — Substitua este
+                    conteúdo pelo seu curso, instituição e período.
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="date">
+                    [ANO]
+                </div>
+
+                <h3>
+                    Curso de [Exemplo]
+                </h3>
+
+                <p>
+                    <strong>[INFORMAÇÃO FICTÍCIA]</strong> — Exemplo de curso
+                    complementar relacionado a geoprocessamento.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= HABILIDADES ================= -->
+
+<section id="habilidades" class="skills">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>Conhecimentos</span>
+
+            <h2>Habilidades</h2>
+
+        </div>
+
+
+        <div class="skills-grid">
+
+            <div class="skill-card">
+
+                <div class="skill-icon">🗺️</div>
+
+                <h3>Cartografia</h3>
+
+                <p>
+                    Conceitos cartográficos, elaboração de mapas,
+                    representação espacial e interpretação de dados.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">🌎</div>
+
+                <h3>SIG / GIS</h3>
+
+                <p>
+                    <strong>[EDITAR]</strong> QGIS, ArcGIS e outras
+                    ferramentas de Sistemas de Informação Geográfica.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">🛰️</div>
+
+                <h3>Sensoriamento Remoto</h3>
+
+                <p>
+                    <strong>[EDITAR]</strong> Processamento e interpretação
+                    de imagens de satélite.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">💻</div>
+
+                <h3>Programação</h3>
+
+                <p>
+                    <strong>[EDITAR]</strong> Python, HTML, CSS, JavaScript
+                    e automação de tarefas geográficas.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">📊</div>
+
+                <h3>Análise de dados</h3>
+
+                <p>
+                    <strong>[EDITAR]</strong> Organização, tratamento,
+                    visualização e análise de dados espaciais.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">🗄️</div>
+
+                <h3>Banco de dados</h3>
+
+                <p>
+                    <strong>[EDITAR]</strong> Conhecimentos em bancos
+                    de dados e dados geoespaciais.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PROJETOS ================= -->
+
+<section id="projetos">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>Portfólio</span>
+
+            <h2>Projetos</h2>
+
+        </div>
+
+
+        <div class="projects">
+
+
+            <div class="project">
+
+                <div class="project-image">
+                    🗺️
+                </div>
+
+                <div class="project-content">
+
+                    <h3>
+                        Mapeamento Urbano
+                    </h3>
+
+                    <p>
+                        <strong>[PROJETO FICTÍCIO]</strong>
+                        Mapeamento e análise de elementos urbanos
+                        utilizando ferramentas SIG.
+                    </p>
+
+                    <span class="project-tag">
+                        QGIS
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="project">
+
+                <div class="project-image">
+                    🌳
+                </div>
+
+                <div class="project-content">
+
+                    <h3>
+                        Análise Ambiental
+                    </h3>
+
+                    <p>
+                        <strong>[PROJETO FICTÍCIO]</strong>
+                        Estudo espacial de áreas verdes e características
+                        ambientais.
+                    </p>
+
+                    <span class="project-tag">
+                        Geoprocessamento
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="project">
+
+                <div class="project-image">
+                    🌐
+                </div>
+
+                <div class="project-content">
+
+                    <h3>
+                        WebGIS
+                    </h3>
+
+                    <p>
+                        <strong>[PROJETO FICTÍCIO]</strong>
+                        Desenvolvimento de mapa interativo para visualização
+                        de informações geográficas.
+                    </p>
+
+                    <span class="project-tag">
+                        OpenStreetMap
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= OBJETIVO ================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>Objetivo profissional</span>
+
+            <h2>Onde quero chegar</h2>
+
+        </div>
+
+        <div style="
+            max-width:800px;
+            margin:auto;
+            text-align:center;
+            color:#64748b;
+            font-size:18px;
+        ">
+
+            <p>
+                Busco desenvolver minha experiência profissional na área de
+                geoprocessamento, contribuindo para projetos que utilizem
+                dados espaciais, cartografia e geotecnologias na solução
+                de problemas reais.
+            </p>
+
+            <br>
+
+            <p>
+                <strong>[EDITAR:</strong>
+                escreva aqui seu objetivo profissional específico,
+                empresa desejada, área de atuação ou projeto de carreira.
+                <strong>]</strong>
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTATO ================= -->
+
+<section id="contato" class="contact">
+
+    <div class="container">
+
+        <div class="contact-box">
+
+            <div class="section-title">
+
+                <span style="color:#86efac;">
+                    Contato
+                </span>
+
+                <h2>
+                    Vamos conversar?
+                </h2>
+
+            </div>
+
+            <p>
+                Estou disponível para oportunidades, projetos,
+                colaborações acadêmicas e networking.
+            </p>
+
+
+            <div class="contact-links">
+
+                <a
+                    href="mailto:seuemail@email.com"
+                    class="contact-link">
+                    ✉️ E-mail
+                </a>
+
+                <a
+                    href="https://www.linkedin.com/"
+                    target="_blank"
+                    class="contact-link">
+                    💼 LinkedIn
+                </a>
+
+                <a
+                    href="https://github.com/"
+                    target="_blank"
+                    class="contact-link">
+                    💻 GitHub
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    © 2026 Yuri Negromonte Nascimento Rocha
+
+    <br>
+
+    <span>
+        Geoprocessamento · IFPB · Geotecnologias
+    </span>
+
+</footer>
+
+
+</body>
+</html>
